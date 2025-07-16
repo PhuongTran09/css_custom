@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* Background + hidden overflow */
+body {
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* Transparent background */
+yt-live-chat-renderer,
+yt-live-chat-text-message-renderer,
+yt-live-chat-author-chip #author-name {
+    background-color: transparent !important;
+}
+
+/* Hide header, input, banners, tickers, overlays, and other extras */
+yt-live-chat-header-renderer,
+yt-live-chat-message-input-renderer,
+yt-live-chat-ticker-renderer,
+yt-live-chat-mode-change-message-renderer,
+yt-live-chat-viewer-engagement-message-renderer,
+yt-live-chat-restricted-participation-renderer,
+yt-live-chat-action-panel-renderer,
+yt-live-chat-banner-manager,
+yt-live-chat-moderation-message-renderer,
+yt-live-chat-membership-only-mode-message-renderer,
+yt-live-chat-message-prompt-renderer,
+yt-live-chat-subscription-message-renderer,
+yt-live-chat-pinned-message-renderer,
+yt-live-chat-paid-message-renderer,
+yt-live-chat-paid-sticker-renderer,
+yt-live-chat-legacy-paid-message-renderer,
+yt-live-chat-legacy-paid-sticker-renderer,
+yt-reaction-control-panel-overlay,
+yt-reaction-control-panel-overlay-view-model,
+yt-reaction-control-panel-view-model,
+yt-live-chat-renderer #action-panel,
+yt-live-chat-renderer #input,
+yt-live-chat-text-message-renderer yt-icon,
+yt-live-chat-text-message-renderer yt-live-chat-author-chip-renderer,
+yt-button-view-model {
+    display: none !important;
+}
+
+/* Hide scrollbar */
+yt-live-chat-item-list-renderer #items,
+yt-live-chat-item-list-renderer #item-scroller {
+    overflow: hidden !important;
+}
+
+/* Chat spacing */
+yt-live-chat-text-message-renderer {
+    margin-bottom: 10px !important;
+}
+
+/* Author badge positioning */
+yt-live-chat-author-badge-renderer {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    border-radius: 50%;
+    border: 3px solid #1895cb;
+}
+
+
+/* Avatar style */
+yt-live-chat-text-message-renderer #author-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+yt-live-chat-text-message-renderer #author-photo,
+yt-live-chat-paid-message-renderer #author-photo,
+yt-live-chat-legacy-paid-message-renderer #author-photo {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 24px !important;
+    margin-right: 6px !important;
+    border: 3px solid #1895cb;
+}
+
+
+/* Padding messages */
+yt-live-chat-text-message-renderer,
+yt-live-chat-legacy-paid-message-renderer,
+yt-live-chat-paid-message-renderer #header {
+    padding: 4px !important;
+}
+
+/* Channel name */
+yt-live-chat-text-message-renderer #author-name {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600 !important;
+    color: #0075a8 !important;
+    background-color: #bfeefe !important;
+    border: 3px solid #1895cb;
+    display: inline-block;
+    max-width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    z-index: 3 !important;
+    padding: 5px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    font-size: 21px;
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+}
+
+/* Chat message content */
+yt-live-chat-text-message-renderer #message {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px !important;
+    line-height: 32px !important;
+    color: #0075a8 !important;
+    background: linear-gradient(to right, #bfeefe, #ffffff);
+    border: 3px solid #1895cb;
+    padding: 10px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    font-weight: 600 !important;
+    text-align: left;
+    font-size: 22px;
+    width: 500px !important;
+    white-space: normal !important;
+    display: block !important;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    user-select: none;
+}
+
+/* Owner */
+yt-live-chat-text-message-renderer[author-type="owner"] #author-photo {
+    border-color: #00a9b8;
+}
+
+yt-live-chat-text-message-renderer[author-type="owner"] #message {
+    background: linear-gradient(to right, #8de6f8, #d2eaff);
+
+
+}
+
+yt-live-chat-text-message-renderer #author-name[type="owner"],
+yt-live-chat-text-message-renderer #author-name.owner {
+
+    background: linear-gradient(to right, #aff0ff, #03d1ff);
+}
+
+/* Moderator */
+yt-live-chat-text-message-renderer[author-type="moderator"] #author-photo {
+    border: 4px solid #1895cb;
+}
+
+yt-live-chat-text-message-renderer[author-type="moderator"] #message {
+    background: linear-gradient(to right, #9be6ff, #ffffff);
+
+}
+
+yt-live-chat-text-message-renderer #author-name[type="moderator"],
+yt-live-chat-text-message-renderer #author-name.moderator {
+    background: linear-gradient(to right, #9be6ff, #ffffff);
+
+}
+
+yt-live-chat-author-badge-renderer[type="moderator"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    font-size: 16px;
+    background-color: #ffffff !important;
+
+}
+
+yt-live-chat-author-badge-renderer[type="moderator"]::before {
+    content: "🛡️";
+}
+
+/* Member */
+yt-live-chat-text-message-renderer[author-type="member"] #author-photo {
+    border: 4px solid #1895cb;
+}
+
+yt-live-chat-text-message-renderer[author-type="member"] #message {
+    background: linear-gradient(to right, #16b5ff, #ffffff);
+
+}
+
+yt-live-chat-text-message-renderer #author-name[type="member"],
+yt-live-chat-text-message-renderer #author-name.member {
+    background: linear-gradient(to right, #16b5ff, #ffffff);
+
+}
+
+yt-live-chat-author-badge-renderer[type="member"] {
+    transform: scale(1) !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    background-color: #ffffff;
+}
+
+/* Member + Mod special combo */
+
+yt-live-chat-text-message-renderer:has(yt-live-chat-author-badge-renderer[type="moderator"]):has(yt-live-chat-author-badge-renderer[type="member"]) #author-photo {
+    border: 3px solid #009bcf;
+}
+
+yt-live-chat-text-message-renderer:has(yt-live-chat-author-badge-renderer[type="moderator"]):has(yt-live-chat-author-badge-renderer[type="member"]) #author-name {
+    background: linear-gradient(to right, #5fdaff, #ffffff);
+}
+
+yt-live-chat-text-message-renderer:has(yt-live-chat-author-badge-renderer[type="moderator"]):has(yt-live-chat-author-badge-renderer[type="member"]) #message {
+    background: linear-gradient(to right, #5fdaff, #ffffff);
+}
+
+yt-live-chat-text-message-renderer:has(yt-live-chat-author-badge-renderer[type="moderator"]):has(yt-live-chat-author-badge-renderer[type="member"]) yt-live-chat-author-badge-renderer[type="member"] {
+    position: absolute;
+    right: 60px;
+
+}
+
+yt-live-chat-text-message-renderer[is-deleted],
+yt-live-chat-text-message-renderer[is-deleted] * {
+    overflow: hidden;
+    display: none !important;
+}
+
+/* Animations */
+@keyframes avatar_pop {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes name_slide {
+    0% {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes chat_bounce {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    60% {
+        transform: translateY(-5px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+yt-live-chat-text-message-renderer:nth-last-of-type(1) #author-photo {
+    animation: avatar_pop 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+yt-live-chat-text-message-renderer:nth-last-of-type(1) #author-name {
+    animation: name_slide 0.4s ease-out forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+yt-live-chat-text-message-renderer:nth-last-of-type(1) #message {
+    animation: chat_bounce 0.5s ease-out forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
+}
+
+yt-live-chat-text-message-renderer:has(yt-live-chat-author-badge-renderer[type="moderator"]):has(yt-live-chat-author-badge-renderer[type="member"]) yt-live-chat-author-badge-renderer[type="member"],
+yt-live-chat-author-badge-renderer:nth-last-of-type(1) {
+    animation: avatar_pop 0.5s ease-out forwards;
+    animation-delay: 0.9s;
+    opacity: 0;
+}
