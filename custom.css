@@ -13,34 +13,7 @@ yt-live-chat-author-chip #author-name {
     background-color: transparent !important;
 }
 
-/* Hide header, input, banners, tickers, overlays, and other extras */
-yt-live-chat-header-renderer,
-yt-live-chat-message-input-renderer,
-yt-live-chat-ticker-renderer,
-yt-live-chat-mode-change-message-renderer,
-yt-live-chat-viewer-engagement-message-renderer,
-yt-live-chat-restricted-participation-renderer,
-yt-live-chat-action-panel-renderer,
-yt-live-chat-banner-manager,
-yt-live-chat-moderation-message-renderer,
-yt-live-chat-membership-only-mode-message-renderer,
-yt-live-chat-message-prompt-renderer,
-yt-live-chat-subscription-message-renderer,
-yt-live-chat-pinned-message-renderer,
-yt-live-chat-paid-message-renderer,
-yt-live-chat-paid-sticker-renderer,
-yt-live-chat-legacy-paid-message-renderer,
-yt-live-chat-legacy-paid-sticker-renderer,
-yt-reaction-control-panel-overlay,
-yt-reaction-control-panel-overlay-view-model,
-yt-reaction-control-panel-view-model,
-yt-live-chat-renderer #action-panel,
-yt-live-chat-renderer #input,
-yt-live-chat-text-message-renderer yt-icon,
-yt-live-chat-text-message-renderer yt-live-chat-author-chip-renderer,
-yt-button-view-model {
-    display: none !important;
-}
+
 
 /* Hide scrollbar */
 yt-live-chat-item-list-renderer #items,
@@ -50,13 +23,13 @@ yt-live-chat-item-list-renderer #item-scroller {
 
 /* Chat spacing */
 yt-live-chat-text-message-renderer {
-    margin-bottom: 10px !important;
+    margin-bottom: 5px !important;
 }
 
 /* Author badge positioning */
 yt-live-chat-author-badge-renderer {
     position: absolute;
-    top: 5px;
+    top: 10px;
     right: 30px;
     border-radius: 30% !important;
     border: 3px solid #1895cb;
@@ -79,7 +52,9 @@ yt-live-chat-legacy-paid-message-renderer #author-photo {
     width: 30px !important;
     height: 30px !important;
     border-radius: 24px !important;
-    margin-right: 6px !important;
+    margin-right: 3px !important;
+    margin-top: 3px !important;
+    margin-left: 3px !important;
     border: 3px solid #1895cb;
 }
 
@@ -96,9 +71,8 @@ yt-live-chat-text-message-renderer #author-name {
     font-family: 'Roboto', sans-serif;
     font-weight: 600 !important;
     color: #0075a8 !important;
-    background: linear-gradient(to right, #a5eeff, #c7f5ff);
+    background: linear-gradient(to right, #d8f8ff, #c1f4ff);
     border: 3px solid #1895cb;
-    border-bottom: none !important;
     display: inline-block;
     max-width: 250px;
     overflow: hidden;
@@ -109,8 +83,7 @@ yt-live-chat-text-message-renderer #author-name {
     padding-left: 15px !important;
     padding-right: 15px !important;
     font-size: 23px;
-    border-top-left-radius: 10px !important;
-    border-top-right-radius: 10px !important;
+    border-radius: 10px !important;
 }
 
 /* Chat message content */
@@ -119,32 +92,34 @@ yt-live-chat-text-message-renderer #message {
     font-size: 24px !important;
     line-height: 32px !important;
     color: #0075a8 !important;
-
-    background: linear-gradient(to right, #a5eeff, #c7f5ff);
-
+    position: relative;
+    top: 3px;
+    background: linear-gradient(to right, #d8f8ff, #c1f4ff);
     border: 3px solid #1895cb;
-    padding: 10px !important;
+    padding: 6px !important;
     padding-left: 15px !important;
     padding-right: 15px !important;
+    margin-bottom: 4px !important;
     font-weight: 600 !important;
     text-align: left;
     font-size: 22px;
     width: 500px !important;
+    border-radius: 10px !important;
     white-space: normal !important;
     display: block !important;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
     user-select: none;
 }
 
 /* Owner */
 yt-live-chat-text-message-renderer[author-type="owner"] #author-photo {
-    border-color: #00a9b8;
+    border-color: #008ebe;
+
 }
 
 yt-live-chat-text-message-renderer[author-type="owner"] #message {
-    background: linear-gradient(to right, #aff0ff, #03d1ff);
+    background: linear-gradient(to right, #c4e9f6, #2fd9ff);
+    color: #008ebe !important;
+    border: #008ebe 3px solid !important;
 
 
 }
@@ -152,7 +127,18 @@ yt-live-chat-text-message-renderer[author-type="owner"] #message {
 yt-live-chat-text-message-renderer #author-name[type="owner"],
 yt-live-chat-text-message-renderer #author-name.owner {
 
-    background: linear-gradient(to right, #aff0ff, #03d1ff);
+    background: linear-gradient(to right, #c4e9f6, #2fd9ff);
+    color: #008ebe !important;
+}
+
+yt-live-chat-text-message-renderer #author-name[type="owner"]::before,
+yt-live-chat-text-message-renderer #author-name.owner::before {
+    content: "♛";
+    color: #008ebe;
+    font-size: 35px;
+    position: absolute;
+    top: 15px;
+    right: 20px !important;
 }
 
 /* Moderator */
@@ -220,7 +206,6 @@ yt-live-chat-author-badge-renderer[type="member"] {
 }
 
 /* Member + Mod special combo */
-
 yt-live-chat-text-message-renderer:has(yt-live-chat-author-badge-renderer[type="moderator"]):has(yt-live-chat-author-badge-renderer[type="member"]) #author-photo {
     border: 3px solid #009bcf;
 }
@@ -249,12 +234,6 @@ yt-live-chat-text-message-renderer:has(yt-live-chat-author-badge-renderer[type="
     position: absolute;
     right: 70px;
 
-}
-
-yt-live-chat-text-message-renderer[is-deleted],
-yt-live-chat-text-message-renderer[is-deleted] * {
-    overflow: hidden;
-    display: none !important;
 }
 
 /* Animations */
@@ -300,4 +279,33 @@ yt-live-chat-text-message-renderer[is-deleted] * {
     overflow: hidden;
     display: none !important;
 
+}
+
+/* Hide header, input, banners, tickers, overlays, and other extras */
+yt-live-chat-header-renderer,
+yt-live-chat-message-input-renderer,
+yt-live-chat-ticker-renderer,
+yt-live-chat-mode-change-message-renderer,
+yt-live-chat-viewer-engagement-message-renderer,
+yt-live-chat-restricted-participation-renderer,
+yt-live-chat-action-panel-renderer,
+yt-live-chat-banner-manager,
+yt-live-chat-moderation-message-renderer,
+yt-live-chat-membership-only-mode-message-renderer,
+yt-live-chat-message-prompt-renderer,
+yt-live-chat-subscription-message-renderer,
+yt-live-chat-pinned-message-renderer,
+yt-live-chat-paid-message-renderer,
+yt-live-chat-paid-sticker-renderer,
+yt-live-chat-legacy-paid-message-renderer,
+yt-live-chat-legacy-paid-sticker-renderer,
+yt-reaction-control-panel-overlay,
+yt-reaction-control-panel-overlay-view-model,
+yt-reaction-control-panel-view-model,
+yt-live-chat-renderer #action-panel,
+yt-live-chat-renderer #input,
+yt-live-chat-text-message-renderer yt-icon,
+yt-live-chat-text-message-renderer yt-live-chat-author-chip-renderer,
+yt-button-view-model {
+    display: none !important;
 }
